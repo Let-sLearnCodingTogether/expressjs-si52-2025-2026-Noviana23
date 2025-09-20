@@ -1,45 +1,20 @@
 import express from "express"
+import web from "./routes/web.js"
 
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send("Hello Word")
-})
+app.use(express.json())
 
-app.get('/mahasiswa',(req, res)=>{
-    res.send("Halaman Mahasiswa 1212121")
-})
+app.use(express.static('public'))
 
-app.get ('/mahasiswa/:npm/:age',(req, res)=>{
-    const npm = req.params.npm
-    const age = req.params.age
+app.set('view engine', 'ejs')
 
-    res.send(`Npm : ${npm}, umur :${age}`)
-})
+app.use(web)
 
-app.get ('/mahasiswa-optional{/:npm}',(req, res)=>{
-    const npm = req.params.npm ?? 'Tanpa NPM'
+app.get('/', () =>{
 
-    res.send(`Npm : ${npm}`)
-})
-
-app.get ('/search-mahasiswa',(req, res)=>{
-    res.send("search Mahasiswa")
-})
-
-app.get ('/status' ,(req, res)=>{
-    res.send("<h1>Server is running</h1>")
-})
-
-app.get ('/profile/{:npm}',(req, res)=>{
-    const npm = req.params.npm ?? 'Tanpa NPM'
-    const profile = {
-        npm : nama,
-        nama : "NAMA"
-    }
-    res.status(200).json(profile)
 })
 
 app.listen("3000", () => {
-    console.log("App berjalan di : http://localhost:3000");
+    console.log("Aplikasi berjalan di : http://localhost:3000");
 })
