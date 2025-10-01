@@ -4,6 +4,6 @@ export const publicProfile = (req,res) => {
     res.render('public-profile',{
         title : username,
         username : username,
-        bio : "Haiii"
+        bio : "Haiii" 
     })
 }
