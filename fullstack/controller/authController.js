@@ -5,7 +5,7 @@ export const register = async (req, res) => {
             data : null
         })
     }catch(e){
-        es.status(500).json({
+        res.status(500).json({
             massage : e.massage,
             data : null
         })
