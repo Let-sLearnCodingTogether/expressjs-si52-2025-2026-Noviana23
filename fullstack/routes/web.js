@@ -10,7 +10,6 @@ web.get('/', (req,res) => {
 })
 
 web.get('/:username', profileController.publicProfile)
-
 web.get('/:profile/:username', profileControllerBaru.publicProfile)
 
 export default web

@@ -3,9 +3,14 @@ import web from "./routes/web.js"
 import api from "./routes/api.js"
 import { database } from "./config/database.js"
 
+import passport from "passport" //Tambahan 
+import "./config/passport.js" //Tambahan 
+
 const app = express()
 
 app.use(express.json())
+
+app.use(passport.initialize()) //Tambahan 
 
 app.use(express.static('public'))
 
