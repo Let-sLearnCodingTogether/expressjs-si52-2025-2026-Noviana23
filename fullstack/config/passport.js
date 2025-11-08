@@ -23,7 +23,7 @@ passport.use(
                 username : user.username
             })
         }catch(error){
-            return donr (null, false)
+            return done (null, false)
         }
     })
 )

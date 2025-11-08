@@ -1,7 +1,7 @@
 import passport from "passport";
 
 export const protect = (req, res, next) => {
-    paasport.authenticate(
+    passport.authenticate(
         'jwt', 
         {
         session: false,
@@ -14,6 +14,7 @@ export const protect = (req, res, next) => {
             });
         }
         req.user = user
+
         return next (); // Untuk Mengizinkan User Lewat 
      }
         )(req, res, next);

@@ -3,10 +3,10 @@ import jwt from "jsonwebtoken"
 export const jwtSignUtil = (user) =>{
     const payload = {
         username : user.username,
-    email : user.Model
+        email : user.email
     }
     const expireIn = {
-        expireIn : '1h'
+        expiresIn : '1h'
     }
     return jwt.sign (payload, "JWT_SECRET_KEY",expireIn)
 }
